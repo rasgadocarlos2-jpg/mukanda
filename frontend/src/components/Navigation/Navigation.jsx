@@ -7,6 +7,7 @@ const Navigation = () => {
   const navItems = [
     { path: '/home', label: 'Início', icon: '🏠' },
     { path: '/artists', label: 'Artistas', icon: '🎤' },
+    { path: '/songs', label: 'Músicas', icon: '🎵' },
     { path: '/favorites', label: 'Favoritos', icon: '❤️' }
   ]
 
