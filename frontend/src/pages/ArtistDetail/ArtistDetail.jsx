@@ -1,61 +1,66 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
+import { artistsAPI, songsAPI } from '../../services/api'
 import Card from '../../components/Card/Card'
 import './ArtistDetail.css'
 
 const ArtistDetail = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [artist, setArtist] = useState(null)
   const [songs, setSongs] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Mock data - substituir por chamadas à API
-        // const artistResponse = await fetch(`/api/artists/${id}`)
-        // const artistData = await artistResponse.json()
-        // setArtist(artistData)
-        
-        // const songsResponse = await fetch(`/api/artists/${id}/songs`)
-        // const songsData = await songsResponse.json()
-        // setSongs(songsData)
-
-        // Mock data temporário
-        setArtist({
-          id: parseInt(id),
-          nome: 'Bonga',
-          origem: 'Benguela',
-          estilo: 'Semba',
-          descricao: 'Bonga Kuenda é um dos mais importantes músicos angolanos. Pioneiro do Semba e da música popular angolana, a sua música carrega mensagens de resistência e identidade cultural.'
-        })
-
-        setSongs([
-          { id: 1, titulo: 'Mona Ki Ngi Xica', artista: 'Bonga', ano: 1972 },
-          { id: 2, titulo: 'Angola', artista: 'Bonga', ano: 1972 }
-        ])
-      } catch (error) {
-        console.error('Erro ao carregar dados:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
     fetchData()
   }, [id])
+
+  const fetchData = async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      
+      // Buscar artista
+      const artistData = await artistsAPI.getById(id)
+      setArtist(artistData)
+      
+      // Buscar todas as músicas e filtrar pelo nome do artista
+      const allSongs = await songsAPI.getAll()
+      const artistSongs = allSongs.filter(song => 
+        song.artista.toLowerCase() === artistData.nome.toLowerCase()
+      )
+      setSongs(artistSongs)
+    } catch (err) {
+      setError(err.message)
+      console.error('Erro ao carregar dados:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   if (loading) {
     return <div className="artist-detail-loading">A carregar...</div>
   }
 
-  if (!artist) {
-    return <div className="artist-detail-error">Artista não encontrado</div>
+  if (error || !artist) {
+    return (
+      <div className="artist-detail-error">
+        <p>{error || 'Artista não encontrado'}</p>
+        <button onClick={() => navigate('/artists')}>Voltar para Artistas</button>
+      </div>
+    )
   }
 
   return (
     <div className="artist-detail">
       <div className="artist-detail__header">
-        <Link to="/artists" className="artist-detail__back">← Voltar</Link>
+        <button 
+          className="artist-detail__back"
+          onClick={() => navigate('/artists')}
+        >
+          ← Voltar
+        </button>
         <div className="artist-detail__avatar">
           {artist.nome.charAt(0)}
         </div>
@@ -69,6 +74,9 @@ const ArtistDetail = () => {
             </>
           )}
         </p>
+        <Link to="/songs/new" className="artist-detail__add-song">
+          + Adicionar Música
+        </Link>
       </div>
 
       <div className="artist-detail__content">
@@ -81,21 +89,30 @@ const ArtistDetail = () => {
 
         <section className="artist-detail__songs">
           <h2 className="artist-detail__section-title">Músicas</h2>
-          <div className="artist-detail__songs-list">
-            {songs.map((song) => (
-              <Card key={song.id} className="artist-detail__song-card">
-                <div className="artist-detail__song-info">
-                  <h3 className="artist-detail__song-title">{song.titulo}</h3>
-                  {song.ano && (
-                    <p className="artist-detail__song-year">{song.ano}</p>
-                  )}
-                </div>
-                <button className="artist-detail__play-button">
-                  ▶️
-                </button>
-              </Card>
-            ))}
-          </div>
+          {songs.length === 0 ? (
+            <div className="artist-detail__no-songs">
+              <p>Ainda não há músicas cadastradas para este artista.</p>
+              <Link to="/songs/new" className="artist-detail__add-song-link">
+                Adicionar primeira música →
+              </Link>
+            </div>
+          ) : (
+            <div className="artist-detail__songs-list">
+              {songs.map((song) => (
+                <Card key={song.id} className="artist-detail__song-card">
+                  <div className="artist-detail__song-info">
+                    <h3 className="artist-detail__song-title">{song.titulo}</h3>
+                    {song.ano && (
+                      <p className="artist-detail__song-year">{song.ano}</p>
+                    )}
+                    {song.estilo && (
+                      <p className="artist-detail__song-style">{song.estilo}</p>
+                    )}
+                  </div>
+                </Card>
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </div>
@@ -103,4 +120,3 @@ const ArtistDetail = () => {
 }
 
 export default ArtistDetail
-

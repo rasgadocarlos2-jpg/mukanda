@@ -1,18 +1,29 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Card from '../../components/Card/Card'
+import { artistsAPI } from '../../services/api'
 import './Home.css'
 
 const Home = () => {
-  // Dados mockados para demonstração
-  const featuredArtists = [
-    { id: 1, nome: 'Bonga', estilo: 'Semba' },
-    { id: 2, nome: 'Elias Dia Kimuezo', estilo: 'Semba' },
-    { id: 3, nome: 'Artur Nunes', estilo: 'Semba' }
-  ]
+  const [artists, setArtists] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-  const curiosity = {
-    title: 'Sabias que...',
-    text: 'O Semba é considerado o precursor do Samba brasileiro. A palavra "Semba" vem do Kimbundu e significa "umbigada", um movimento característico desta dança.'
+  useEffect(() => {
+    loadArtists()
+  }, [])
+
+  const loadArtists = async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      const data = await artistsAPI.getAll()
+      setArtists(data)
+    } catch (err) {
+      setError(err.message)
+      console.error('Erro ao carregar artistas:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -23,50 +34,55 @@ const Home = () => {
       </div>
 
       <div className="home__content">
-        {/* Destaque */}
-        <section className="home__section">
-          <Card className="home__featured-card">
-            <h2 className="home__section-title">De quem é esta música?</h2>
-            <p className="home__featured-text">
-              Explore a história e os artistas por trás das músicas clássicas angolanas.
-            </p>
-            <Link to="/artists" className="home__cta">
-              Explorar Artistas →
-            </Link>
-          </Card>
-        </section>
-
-        {/* Artistas em destaque */}
-        <section className="home__section">
-          <h2 className="home__section-title">Artistas em Destaque</h2>
-          <div className="home__artists-grid">
-            {featuredArtists.map((artist) => (
-              <Link 
-                key={artist.id} 
-                to={`/artists/${artist.id}`}
-                className="home__artist-card"
-              >
-                <div className="home__artist-avatar">
-                  {artist.nome.charAt(0)}
-                </div>
-                <h3 className="home__artist-name">{artist.nome}</h3>
-                <p className="home__artist-style">{artist.estilo}</p>
-              </Link>
-            ))}
+        {loading && <p className="home__loading">A carregar artistas...</p>}
+        
+        {error && (
+          <div className="home__error">
+            <p>Erro ao carregar artistas: {error}</p>
+            <button onClick={loadArtists}>Tentar novamente</button>
           </div>
-        </section>
+        )}
 
-        {/* Curiosidade */}
-        <section className="home__section">
-          <Card className="home__curiosity-card">
-            <h3 className="home__curiosity-title">{curiosity.title}</h3>
-            <p className="home__curiosity-text">{curiosity.text}</p>
-          </Card>
-        </section>
+        {!loading && !error && (
+          <>
+            {artists.length === 0 ? (
+              <div className="home__empty">
+                <p>Ainda não há artistas cadastrados.</p>
+                <Link to="/artists/new" className="home__cta">
+                  Adicionar primeiro artista →
+                </Link>
+              </div>
+            ) : (
+              <section className="home__section">
+                <h2 className="home__section-title">Artistas</h2>
+                <div className="home__artists-grid">
+                  {artists.map((artist) => (
+                    <Link 
+                      key={artist.id} 
+                      to={`/artists/${artist.id}`}
+                      className="home__artist-card"
+                    >
+                      <div className="home__artist-avatar">
+                        {artist.nome.charAt(0)}
+                      </div>
+                      <h3 className="home__artist-name">{artist.nome}</h3>
+                      {artist.origem && (
+                        <p className="home__artist-origin">{artist.origem}</p>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+                <div className="home__actions">
+                  <Link to="/artists" className="home__link">Ver todos os artistas →</Link>
+                  <Link to="/artists/new" className="home__link">Adicionar artista →</Link>
+                </div>
+              </section>
+            )}
+          </>
+        )}
       </div>
     </div>
   )
 }
 
 export default Home
-
