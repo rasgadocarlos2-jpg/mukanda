@@ -1,0 +1,128 @@
+/* Estilos Globais - Mukanda */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores */
+  --color-primary: #8B6F47;
+  --color-primary-dark: #6B5335;
+  --color-primary-light: #A68B6B;
+  --color-bege: #F5E6D3;
+  --color-bege-medium: #E8D5C0;
+  --color-bege-dark: #D4C4B0;
+  --color-sepia: #C9A961;
+  --color-sepia-dark: #9B8450;
+  --color-text-primary: #3D2F1F;
+  --color-text-secondary: #5C4A37;
+  --color-text-light: #8B7355;
+  --color-white: #FFFFFF;
+  --color-off-white: #FAF8F5;
+  --color-border: #D9C7B0;
+  --color-accent: #B8860B;
+  
+  /* Tipografia */
+  --font-heading: 'Crimson Text', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bege);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-sepia);
+}
+
+/* Componentes base */
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input, textarea {
+  font-family: var(--font-body);
+}
+
+/* Utilidades */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Scrollbar personalizada (tema quente) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bege-medium);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sepia-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+

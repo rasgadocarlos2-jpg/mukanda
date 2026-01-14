@@ -1,0 +1,94 @@
+.player {
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  background-color: var(--color-off-white);
+  border-top: 1px solid var(--color-border);
+  padding: 1rem;
+  z-index: 99;
+}
+
+.player__content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.player__info {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.player__title {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-heading);
+}
+
+.player__artist {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.player__controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.player__button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.player__button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.player__progress {
+  height: 4px;
+  background-color: var(--color-bege-medium);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.player__progress-bar {
+  height: 100%;
+  background-color: var(--color-sepia);
+  transition: width 0.1s linear;
+}
+
+.player__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.player__close:hover {
+  background-color: var(--color-bege-medium);
+  color: var(--color-text-primary);
+}
+
