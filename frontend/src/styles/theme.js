@@ -38,8 +38,11 @@ export const colors = {
 }
 
 export const typography = {
-  // Títulos - Tipografia serifada editorial
-  fontFamilyHeading: "'Crimson Text', 'Georgia', serif",
+  // Títulos - Tipografia serifada editorial (Playfair Display para títulos principais)
+  fontFamilyHeading: "'Playfair Display', 'Cormorant Garamond', 'Georgia', serif",
+  
+  // Subtítulos - Tipografia editorial elegante (Cormorant Garamond)
+  fontFamilySubheading: "'Cormorant Garamond', 'Playfair Display', 'Georgia', serif",
   
   // Corpo - Tipografia simples e legível
   fontFamilyBody: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",

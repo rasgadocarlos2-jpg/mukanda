@@ -47,7 +47,22 @@
 .artist-detail__meta {
   font-size: 1.125rem;
   color: var(--color-text-secondary);
-  margin: 0;
+  margin: 0 0 1rem 0;
+}
+
+.artist-detail__add-song {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.artist-detail__add-song:hover {
+  background-color: var(--color-primary-dark);
 }
 
 .artist-detail__content {
@@ -130,5 +145,34 @@
   text-align: center;
   padding: 4rem 1rem;
   color: var(--color-text-secondary);
+}
+
+.artist-detail-error button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.artist-detail__no-songs {
+  text-align: center;
+  padding: 2rem;
+}
+
+.artist-detail__add-song-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.artist-detail__song-style {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0.25rem 0 0 0;
 }
 

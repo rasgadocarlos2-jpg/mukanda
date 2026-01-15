@@ -1,6 +1,6 @@
 .home {
   min-height: 100vh;
-  padding-bottom: 80px; /* Espaço para navegação */
+  padding-bottom: 80px;
 }
 
 .home__header {
@@ -39,36 +39,11 @@
   font-family: var(--font-heading);
 }
 
-.home__featured-card {
-  text-align: center;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-bege) 100%);
-}
-
-.home__featured-text {
-  font-size: 1.125rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-.home__cta {
-  display: inline-block;
-  color: var(--color-primary);
-  font-weight: 500;
-  font-size: 1.125rem;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.home__cta:hover {
-  color: var(--color-sepia);
-}
-
 .home__artists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .home__artist-card {
@@ -103,28 +78,55 @@
   font-family: var(--font-heading);
 }
 
-.home__artist-style {
+.home__artist-origin {
   font-size: 0.875rem;
   color: var(--color-text-light);
   margin: 0;
 }
 
-.home__curiosity-card {
-  background: linear-gradient(135deg, var(--color-sepia-light) 0%, var(--color-bege) 100%);
-  border: 1px solid var(--color-sepia);
+.home__actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.home__curiosity-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-text-primary);
-  font-family: var(--font-heading);
+.home__link {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: underline;
 }
 
-.home__curiosity-text {
-  font-size: 1rem;
-  line-height: 1.7;
+.home__link:hover {
+  color: var(--color-sepia);
+}
+
+.home__loading,
+.home__error {
+  text-align: center;
+  padding: 4rem 1rem;
   color: var(--color-text-secondary);
-  margin: 0;
 }
 
+.home__error button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.home__empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.home__cta {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: underline;
+}

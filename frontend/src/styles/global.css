@@ -24,8 +24,9 @@
   --color-border: #D9C7B0;
   --color-accent: #B8860B;
   
-  /* Tipografia */
-  --font-heading: 'Crimson Text', 'Georgia', serif;
+  /* Tipografia Editorial */
+  --font-heading: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
+  --font-subheading: 'Cormorant Garamond', 'Playfair Display', 'Georgia', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
