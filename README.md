@@ -1,5 +1,9 @@
 # 🎵 Mukanda
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Made in Angola](https://img.shields.io/badge/Made%20in-Angola-red.svg)](https://angola.ao)
+
 **Mukanda** é um projeto digital dedicado à preservação, valorização e acesso à memória viva da música angolana.  
 Da raiz ao agora.
 
@@ -169,3 +173,4 @@ Se quiseres, no próximo passo posso:
 - Criar um **pitch técnico** da Mukanda
 
 Estás a construir algo muito sólido.
+
