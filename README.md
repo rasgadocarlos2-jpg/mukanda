@@ -12,8 +12,6 @@ O seu objetivo é criar um arquivo vivo que organize artistas, canções e hist�
 
 Mais do que uma aplicação, a Mukanda é um espaço de memória, descoberta e continuidade cultural.
 
-⸻
-
 🌍 Visão
 
 A música angolana é mais do que entretenimento.
@@ -24,8 +22,6 @@ A Mukanda nasce para:
 	•	Tornar essa história acessível às novas gerações
 	•	Unir cultura, tecnologia e memória
 	•	Criar uma base sólida para investigação, descoberta e valorização cultural
-
-⸻
 
 🧩 O que é a Mukanda?
 
@@ -50,7 +46,6 @@ Interface intuitiva e editorial para:
 	•	Contexto educativo
 	•	Narrativas sobre movimentos, estilos e artistas
 
-⸻
 
 🎨 Design (Figma)
 
@@ -63,8 +58,6 @@ Princípios de UI/UX:
 	•	Nostálgica (tons quentes, sépia, textura)
 	•	Cultura em primeiro lugar
 	•	Foco em descoberta, não em algoritmos agressivos
-
-⸻
 
 🛠️ Tecnologias
 
@@ -80,8 +73,6 @@ Frontend (em desenvolvimento)
 	•	React
 	•	Consumo direto da API Mukanda
 	•	UI inspirada em plataformas de música, com identidade cultural própria
-
-⸻
 
 📁 Estrutura do projeto
 
@@ -100,8 +91,6 @@ mukanda/
 ├── README.md
 └── requirements.txt
 
-
-⸻
 
 🚀 Como correr o projeto (Backend)
 
@@ -131,7 +120,7 @@ uvicorn app.main:app --reload
 	•	API: http://127.0.0.1:8000
 	•	Swagger Docs: http://127.0.0.1:8000/docs
 
-⸻
+
 
 📡 Endpoints principais
 
@@ -143,7 +132,7 @@ Músicas
 	•	GET /songs — Listar músicas
 	•	POST /songs — Criar música
 
-⸻
+
 
 🧪 Estado do projeto
 	•	✅ Backend MVP funcional
@@ -153,7 +142,7 @@ Músicas
 	•	🚧 Base de dados persistente (planeado)
 	•	🚧 Autenticação e curadoria (futuro)
 
-⸻
+
 
 🔄 Atualizações (Updates)
 	•	v0.1 — MVP Backend
@@ -169,7 +158,7 @@ Músicas
 	•	Persistência com PostgreSQL
 	•	Player de música (MVP)
 
-⸻
+
 
 🗺️ Roadmap
 	•	Persistência de dados (PostgreSQL)
@@ -179,7 +168,6 @@ Músicas
 	•	App mobile (iOS / Android)
 	•	Parcerias culturais e educativas
 
-⸻
 
 🤝 Contribuição
 
@@ -190,11 +178,10 @@ Contribuições são bem-vindas desde que alinhadas com:
 	•	Rigor histórico
 	•	Responsabilidade ética
 
-⸻
-
 🖤 Agradecimento
 
 Obrigado a todos que acreditam na memória, na música e na cultura angolana.
 
 A Mukanda está a nascer —
 e cresce com a comunidade.
+
