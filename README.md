@@ -4,56 +4,87 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Made in Angola](https://img.shields.io/badge/Made%20in-Angola-red.svg)](https://angola.ao)
 
-**Mukanda** é um projeto digital dedicado à preservação, valorização e acesso à memória viva da música angolana.  
-Da raiz ao agora.
+📖 Sobre o projeto
 
-O objetivo da Mukanda é criar um **arquivo vivo** que organize artistas, canções e histórias que moldaram — e continuam a moldar — a identidade musical de Angola.
+A Mukanda é um projeto digital dedicado à preservação, valorização e acesso à memória viva da música angolana.
 
----
+O seu objetivo é criar um arquivo vivo que organize artistas, canções e histórias que moldaram — e continuam a moldar — a identidade musical de Angola.
 
-## 🌍 Visão
+Mais do que uma aplicação, a Mukanda é um espaço de memória, descoberta e continuidade cultural.
 
-A música angolana é mais do que entretenimento:  
-é resistência, identidade, memória e futuro.
+⸻
+
+🌍 Visão
+
+A música angolana é mais do que entretenimento.
+É resistência, identidade, memória e futuro.
 
 A Mukanda nasce para:
-- Preservar a história musical angolana
-- Tornar essa história acessível às novas gerações
-- Unir cultura, tecnologia e memória
-- Criar uma base sólida para investigação, descoberta e valorização cultural
+	•	Preservar a história musical angolana
+	•	Tornar essa história acessível às novas gerações
+	•	Unir cultura, tecnologia e memória
+	•	Criar uma base sólida para investigação, descoberta e valorização cultural
 
----
+⸻
 
-## 🧩 O que é a Mukanda?
+🧩 O que é a Mukanda?
 
-A Mukanda é composta por:
+A Mukanda é composta por três pilares principais:
 
-- **Backend (API)** — responsável por gerir dados de artistas, músicas e relações
-- **Frontend (App/Web)** — interface editorial e intuitiva para explorar o arquivo
-- **Conteúdo cultural** — contexto histórico, educativo e narrativo
+🧠 Backend (API)
 
----
+Responsável por gerir:
+	•	Artistas
+	•	Músicas
+	•	Relações culturais e históricas
 
-## 🛠️ Tecnologias
+🎨 Frontend (App / Web)
 
-### Backend
-- **Python**
-- **FastAPI**
-- **Pydantic**
-- Estrutura modular (models, routes, main)
-- API documentada com Swagger (OpenAPI)
+Interface intuitiva e editorial para:
+	•	Explorar artistas e músicas
+	•	Descobrir contextos históricos
+	•	Navegar pelo arquivo musical angolano
 
-### Frontend (em desenvolvimento)
-- **JavaScript / TypeScript**
-- **React**
-- UI editorial, minimalista e cultural
-- Consumo direto da API Mukanda
+📚 Conteúdo cultural
+	•	Textos históricos
+	•	Contexto educativo
+	•	Narrativas sobre movimentos, estilos e artistas
 
----
+⸻
 
-## 📁 Estrutura do projeto
+🎨 Design (Figma)
 
-```text
+👉 Protótipo e UI/UX no Figma:
+🔗 https://www.figma.com/make/4AzyG1u9SmLpiOwbztG7Cm/Mukanda-Music-Streaming-App
+
+Princípios de UI/UX:
+	•	Mobile-first
+	•	Editorial e limpa
+	•	Nostálgica (tons quentes, sépia, textura)
+	•	Cultura em primeiro lugar
+	•	Foco em descoberta, não em algoritmos agressivos
+
+⸻
+
+🛠️ Tecnologias
+
+Backend
+	•	Python
+	•	FastAPI
+	•	Pydantic
+	•	Estrutura modular (models, routes, main)
+	•	API documentada com Swagger (OpenAPI)
+
+Frontend (em desenvolvimento)
+	•	JavaScript / TypeScript
+	•	React
+	•	Consumo direto da API Mukanda
+	•	UI inspirada em plataformas de música, com identidade cultural própria
+
+⸻
+
+📁 Estrutura do projeto
+
 mukanda/
 │
 ├── app/
@@ -98,7 +129,7 @@ uvicorn app.main:app --reload
 
 5. Aceder à API
 	•	API: http://127.0.0.1:8000
-	•	Documentação Swagger: http://127.0.0.1:8000/docs
+	•	Swagger Docs: http://127.0.0.1:8000/docs
 
 ⸻
 
@@ -114,29 +145,35 @@ Músicas
 
 ⸻
 
-🎨 UI / UX (Princípios)
-
-A experiência Mukanda segue estes princípios:
-	•	Editorial e limpa
-	•	Nostálgica, com tons quentes e sépia
-	•	Foco em leitura e descoberta
-	•	Cultura em primeiro lugar, não algoritmos agressivos
-	•	Design que respeita a memória
-
-⸻
-
 🧪 Estado do projeto
 	•	✅ Backend MVP funcional
-	•	✅ API documentada
+	•	✅ API documentada (Swagger)
+	•	✅ Design UI/UX definido no Figma
 	•	🚧 Frontend em desenvolvimento
 	•	🚧 Base de dados persistente (planeado)
 	•	🚧 Autenticação e curadoria (futuro)
 
 ⸻
 
+🔄 Atualizações (Updates)
+	•	v0.1 — MVP Backend
+	•	API funcional com FastAPI
+	•	Endpoints de artistas e músicas
+	•	Estrutura modular definida
+	•	v0.2 — Design & UX
+	•	UI/UX mobile-first criado no Figma
+	•	Identidade visual definida
+	•	Estrutura de ecrãs da app
+	•	Próximo passo
+	•	Integração Frontend + API
+	•	Persistência com PostgreSQL
+	•	Player de música (MVP)
+
+⸻
+
 🗺️ Roadmap
 	•	Persistência de dados (PostgreSQL)
-	•	Sistema de curadoria
+	•	Sistema de curadoria cultural
 	•	Pesquisa avançada
 	•	Upload de conteúdos históricos
 	•	App mobile (iOS / Android)
@@ -146,9 +183,9 @@ A experiência Mukanda segue estes princípios:
 
 🤝 Contribuição
 
-Este projeto nasce com respeito pela cultura.
+Este projeto nasce com respeito profundo pela cultura angolana.
 
-Sugestões, ideias e contributos são bem-vindos, desde que alinhados com:
+Contribuições são bem-vindas desde que alinhadas com:
 	•	Preservação cultural
 	•	Rigor histórico
 	•	Responsabilidade ética
@@ -158,19 +195,6 @@ Sugestões, ideias e contributos são bem-vindos, desde que alinhados com:
 🖤 Agradecimento
 
 Obrigado a todos que acreditam na memória, na música e na cultura angolana.
-A Mukanda está a nascer — e cresce com a comunidade.
 
-Mukanda
-Arquivo vivo da música angolana
-Da raiz ao agora.
-
----
-
-Se quiseres, no próximo passo posso:
-- Adaptar o README para **investidores**
-- Criar um **README só para o frontend**
-- Criar um **CONTRIBUTING.md**
-- Criar um **pitch técnico** da Mukanda
-
-Estás a construir algo muito sólido.
-
+A Mukanda está a nascer —
+e cresce com a comunidade.
